@@ -5,7 +5,7 @@ permalink: /:title.html/
 url: https://asicnite.github.io
 paginate: 8
 paginate_path: "/page:num"
-repo:asicnite.github.io
+repo: asicnite.github.io
 owner: asicnite
 
 markdown: redcarpet
