@@ -53,7 +53,25 @@
 					rt.innerHTML = "本站已运行: "+A+"天"+B+"小时"+C+"分"+D+"秒"
 				}
 				setInterval(runtime, 1000);
+				
+				//假设你的页面中有一个id为content的div元素，包含了多个段落
+				var content = document.getElementById("post-card");
+				//获取所有的段落元素
+				var paragraphs = content.getElementsByTagName("p");
+				//遍历每个段落元素
+				for (var i = 0; i < paragraphs.length; i++) {
+				  //获取当前段落的文本内容
+				  var text = paragraphs[i].textContent;
+				  //使用正则表达式判断是否包含阿拉伯语字符
+				  var arabicRegex = /[\u0600-\u06FF]/;
+				  //如果包含阿拉伯语字符，就将该段落的css direction属性设置为rtl
+				  if (arabicRegex.test(text)) {
+				    paragraphs[i].style.direction = "rtl";
+				  }
+				}
+
 			</script>
+			
 			{{ site.description }}
 		</footer>
 	</body>
